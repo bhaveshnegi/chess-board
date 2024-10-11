@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Chessboard Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Task 1: Chessboard Application
 
-## Available Scripts
+### 1. Project Description
 
-In the project directory, you can run:
+This project is a Chessboard application developed using **React** and **Redux**. The chessboard consists of an 8x8 grid of alternating black and white squares. The following functionalities are implemented:
 
-### `npm start`
+- **Click Interaction:**
+  - When a user clicks on a white square, its color changes to yellow.
+  - When a user clicks on a black square, its color changes to red.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The application's state, including the color of each square, is managed using **Redux** to ensure proper state management across the board.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### 2. Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Alternating Colors:** The chessboard consists of black and white squares arranged alternately.
+- **Color Change on Click:**
+  - White squares change to yellow upon being clicked.
+  - Black squares change to red upon being clicked.
+- **State Management:** Redux is used to track and manage the color of each square globally.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Application Workflow
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Board Rendering:**
+   - The chessboard is rendered as an 8x8 grid, where each square alternates between black and white.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Square Interaction:**
+   - When a square is clicked, a Redux action is dispatched, updating the color of the clicked square.
+   - White squares toggle between white and yellow, while black squares toggle between black and red.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 4. Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **React** for building the UI components.
+- **Redux** for managing the global state of the chessboard.
+- **CSS Grid Layout** for rendering the chessboard layout in an 8x8 grid format.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 5. Component & State Structure
 
-## Learn More
+#### Components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Chessboard Component:**
+  - Renders an 8x8 grid of squares, each square alternates in color and has an onClick behavior to toggle its color.
+  
+- **Square Component:**
+  - Represents each square on the chessboard, receiving its color and click behavior from Redux.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Redux State Management
 
-### Code Splitting
+1. **Actions:**
+   - `TOGGLE_SQUARE_COLOR`: Updates the color of a square based on user clicks.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. **Reducer:**
+   - The `chessboardReducer` tracks the state of each square, managing the color changes (white/yellow or black/red) when the appropriate action is dispatched.
 
-### Analyzing the Bundle Size
+3. **Algorithm:**
+   - **Color Toggle Logic:** On click, white squares change to yellow, and black squares change to red. Redux updates the color state, which is then reflected in the UI.
+   - **CSS Grid Layout:** Ensures the chessboard is displayed as a grid with equal-sized squares, alternating between black and white.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
